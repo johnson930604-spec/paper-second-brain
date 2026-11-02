@@ -5,3 +5,29 @@
 
 /* 讓教授照片完整融入原本的介紹區塊。 */
 img.professor-avatar{object-fit:cover;object-position:center 18%}
+
+/* 靈感問卷沿用原有配色，寬螢幕左右排列，手機改為單欄。 */
+.idea-entry{display:inline-block;text-decoration:none}.welcome-actions{flex-wrap:wrap;gap:14px}.idea-section{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,1.5fr);margin-top:30px;border:1px solid #dfe7de;border-radius:15px;background:#fff;overflow:hidden;scroll-margin-top:24px}.idea-intro{padding:32px;background:#f0f3ec}.idea-symbol{display:grid;place-items:center;width:44px;height:44px;margin-bottom:25px;border:1px solid #d4dfd0;border-radius:13px;color:#638466;font-size:29px}.idea-intro .kicker{color:#687f67}.idea-intro h2{font-size:24px;line-height:1.6;letter-spacing:1px;margin:12px 0;color:#35543d}.idea-intro>p:not(.kicker){color:#70836f;font-size:12px;line-height:1.9}.idea-time{display:inline-block;font-size:11px;color:#658267;margin-top:15px}.idea-intro .idea-privacy{border-top:1px solid #dae3d5;padding-top:18px;margin-top:28px;font-size:11px}.idea-form{padding:30px;min-width:0}.idea-form-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.idea-form-heading h3{font-size:17px;margin:0}.idea-form-heading>span{font-size:11px;color:#849183}.idea-form label{color:#526a56;line-height:1.6}.idea-form input,.idea-form textarea,.idea-form select{background:#fcfdfb;line-height:1.6}.idea-form input::placeholder,.idea-form textarea::placeholder{color:#8b978b}.idea-length{font-size:10px;color:#7d8f7f;text-align:right;margin:-10px 0 18px}.idea-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.idea-submit{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #edf0e9;padding-top:18px}.idea-submit>span{font-size:11px;color:#829080}.idea-submit .primary{white-space:nowrap}.idea-status{font-size:12px;line-height:1.7;color:#3e6a4b;margin:12px 0 0}.idea-status:empty{display:none}.idea-status.error{color:#a24c3e}#idea-view{display:inline-block;margin-top:10px}#idea-view[hidden]{display:none}
+.idea-form button:disabled{opacity:.65;cursor:wait}
+/* 雲端帳號與分類欄位沿用原有配色，較窄的畫面會自動換行。 */
+[hidden]{display:none!important}
+.cloud-panel{padding:24px 28px;background:#fff;border:1px solid #dfe7de;border-radius:14px;margin-bottom:26px}
+.cloud-panel h2{margin:0;font-size:18px;color:#35543d}
+.cloud-panel p:not(.kicker){font-size:12px;line-height:1.8;color:#738276}
+.account-form{display:grid;grid-template-columns:1fr 1fr auto;gap:16px;align-items:end;margin-top:16px}
+.account-form label{margin:0;min-width:0}
+.account-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#account-tools{margin-top:16px}
+.cloud-panel .cloud-help{font-size:11px;color:#8b978b;margin-bottom:0}
+.form-status{font-size:12px;line-height:1.8;color:#436d4e;white-space:pre-wrap}
+.form-status:empty{display:none}
+.form-status.error{color:#a24c3e}
+.record-meta{margin-top:12px;font-size:10px;line-height:1.8;color:#7b8d7c;white-space:pre-wrap}
+button:disabled{opacity:.6;cursor:wait}
+#note-dialog{width:min(640px,calc(100% - 32px));max-height:90vh;overflow-y:auto}
+#note-dialog .dialog-actions{flex-wrap:wrap}
+#note-dialog .dialog-actions .primary{margin-left:auto}
+@media(max-width:1100px){.account-form{grid-template-columns:1fr 1fr}.account-form .account-actions{grid-column:1/-1}}
+@media(max-width:650px){.cloud-panel{padding:20px}.account-form{grid-template-columns:1fr}.notes-heading{align-items:start;gap:15px;flex-wrap:wrap}.filters{gap:16px}.dialog-actions button{flex:1}}
+@media(max-width:1100px){.idea-section{grid-template-columns:1fr}.idea-intro{padding:25px}.idea-symbol{display:none}.idea-intro h2{font-size:22px}.idea-intro h2 br{display:none}.idea-intro .idea-privacy{margin-top:15px;padding-top:12px}.idea-time{margin-top:5px}}
+@media(max-width:650px){.idea-form{padding:22px}.idea-fields{grid-template-columns:1fr;gap:0}.idea-submit{align-items:flex-start;flex-direction:column}.idea-submit .primary{width:100%}.welcome-actions{gap:12px}.idea-intro{padding:22px}}

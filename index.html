@@ -20,16 +20,51 @@
         <button class="nav-item" data-filter="文獻閱讀"><span>▧</span> 文獻閱讀</button>
         <button class="nav-item" data-filter="靈感收集"><span>✧</span> 靈感收集</button>
         <button class="nav-item" data-filter="待辦事項"><span>☑</span> 待辦事項</button>
+        <button class="nav-item" data-filter="會議紀錄"><span>☷</span> 會議紀錄</button>
         <a class="nav-item professor-link" href="#professor"><span>♧</span> 指導教授</a>
       </nav>
       <div class="sidebar-bottom"><div class="side-quote">「知識不是收藏，<br>而是讓想法持續生長。」<span>給正在探索的你 ↗</span></div><div class="profile"><div class="avatar">研</div><div>我的研究空間<small>持續探索中 ✨</small></div><span class="chevron">···</span></div></div>
     </aside>
     <main id="home" class="main">
-      <header class="topbar"><div class="breadcrumbs">我的工作空間 <span>/</span> <strong id="breadcrumb">總覽</strong></div><div class="top-actions"><span class="saved"><i></i> 自動儲存於此瀏覽器</span><button class="icon-button" id="focus-search" aria-label="搜尋筆記">⌕</button><button class="profile-small" aria-label="個人工作空間">研</button></div></header>
+      <header class="topbar"><div class="breadcrumbs">我的工作空間 <span>/</span> <strong id="breadcrumb">總覽</strong></div><div class="top-actions"><span class="saved" id="sync-state" role="status">目前使用本機資料</span><button class="icon-button" id="focus-search" aria-label="搜尋筆記">⌕</button><button class="profile-small" aria-label="個人工作空間">研</button></div></header>
       <div class="content">
-        <section class="welcome"><div><p class="eyebrow"><span>✳</span> 專屬你的思考空間</p><h1>讓想法，有個安放的地方<span>。</span></h1><p>嗨，研究生！把散落的靈感、文獻與思考，慢慢整理成你的知識宇宙。</p><div class="welcome-actions"><button class="primary" id="new-note">＋ 新增一則筆記</button><a class="text-link" href="#notes">看看我的知識庫 <span>↗</span></a></div></div><div class="illustration" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="planet">✳</div><span class="star star-one">✦</span><span class="star star-two">✳</span><span class="star star-three">✦</span><span class="orbit-label">讓想法在這裡生長</span></div></section>
+        <section class="cloud-panel" aria-labelledby="cloud-title">
+          <div><p class="kicker">讓研究進度接得上</p><h2 id="cloud-title">我的雲端研究空間</h2><p id="account-description">登入後，會議、待辦、文獻與筆記會儲存到你的私人帳號。未登入時仍可使用本機筆記。</p></div>
+          <form id="account-form" class="account-form">
+            <label>電子郵件<input id="account-email" type="email" required autocomplete="username" placeholder="請輸入電子郵件"></label>
+            <label>密碼<input id="account-password" type="password" required minlength="8" autocomplete="current-password" placeholder="至少八個字元"></label>
+            <div class="account-actions"><button type="submit" class="primary">登入</button><button type="submit" class="outline" id="register-account">註冊帳號</button></div>
+          </form>
+          <div id="account-tools" class="account-actions" hidden><button class="outline" id="sync-records" type="button">重新整理雲端資料</button><button class="outline" id="import-records" type="button">匯入本機筆記</button><button class="outline" id="sign-out" type="button">登出</button></div>
+          <p id="account-status" class="form-status" role="status" aria-live="polite"></p>
+          <p class="cloud-help" id="account-help">首次註冊若收到確認信，請點擊信中連結完成驗證，再回到此頁登入。即使驗證後跳轉的頁面無法開啟，也可以直接回來登入。</p>
+        </section>
+        <section class="welcome"><div><p class="eyebrow"><span>✳</span> 專屬你的思考空間</p><h1>讓想法，有個安放的地方<span>。</span></h1><p>嗨，研究生！把散落的靈感、文獻與思考，慢慢整理成你的知識宇宙。</p><div class="welcome-actions"><a class="primary idea-entry" href="#instant-idea">✧ 記下即時靈感</a><button class="outline" id="new-note">＋ 新增一則筆記</button><a class="text-link" href="#notes">看看我的知識庫 <span>↗</span></a></div></div><div class="illustration" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="planet">✳</div><span class="star star-one">✦</span><span class="star star-two">✳</span><span class="star star-three">✦</span><span class="orbit-label">讓想法在這裡生長</span></div></section>
+        <section class="idea-section" id="instant-idea" aria-labelledby="idea-title">
+          <div class="idea-intro">
+            <span class="idea-symbol" aria-hidden="true">✧</span>
+            <p class="kicker">留住腦海中閃過的那一刻</p>
+            <h2 id="idea-title">你的下一個好點子，<br>就從這裡開始。</h2>
+            <p>不用想得很完整，先把靈感留下來。<br>用幾個小問題，讓想法有個起點。</p>
+            <span class="idea-time">◷ 約一分鐘・隨時都能記錄</span>
+            <p class="idea-privacy">提交後會將問卷儲存至雲端，供此網站的管理者查看，並在此瀏覽器的「靈感收集」保留一份副本。編輯本機筆記不會更動已提交的問卷。</p>
+          </div>
+          <form id="idea-form" class="idea-form">
+            <div class="idea-form-heading"><h3>即時靈感問卷</h3><span>＊為必填</span></div>
+            <label for="idea-name">① 給這個靈感一個名字 ＊<input id="idea-name" name="title" required maxlength="80" placeholder="例如：讓文獻筆記變得更好找"></label>
+            <label for="idea-detail">② 剛剛想到什麼？＊<textarea id="idea-detail" name="content" required rows="4" maxlength="2000" placeholder="記下你的點子、想解決的問題，或一個值得探索的方向。" aria-describedby="idea-length"></textarea></label>
+            <p id="idea-length" class="idea-length">已輸入 0／2000 字</p>
+            <div class="idea-fields">
+              <label for="idea-source">③ 靈感從哪裡來？<select id="idea-source" name="source"><option value="">請選擇（選填）</option><option>文獻閱讀</option><option>課堂學習</option><option>對話交流</option><option>生活觀察</option><option>突然想到</option><option>其他</option></select></label>
+              <label for="idea-next">④ 下一步想做什麼？<input id="idea-next" name="next" maxlength="200" placeholder="選填，例如：找一篇相關文獻"></label>
+            </div>
+            <div class="idea-submit"><span>先記下來，讓想法慢慢生長。</span><button type="submit" class="primary">提交靈感 <span aria-hidden="true">↗</span></button></div>
+            <p id="idea-status" class="idea-status" role="status" aria-live="polite"></p>
+            <a id="idea-view" class="text-link" href="#notes" hidden>查看我的靈感收集 ↗</a>
+          </form>
+        </section>
         <section class="overview" aria-label="知識庫統計"><div class="section-heading"><div><p class="kicker">你的研究日常</p><h2>研究空間 <span>／ 空間總覽</span></h2></div><span class="subtle">每一個小步驟，都是累積</span></div><div class="stats"><article class="stat"><div class="stat-top"><span class="stat-icon green">▤</span><span>↗</span></div><p>筆記總數</p><strong id="total-count">0</strong><small>所有的思考與紀錄</small></article><article class="stat"><div class="stat-top"><span class="stat-icon peach">▧</span><span>↗</span></div><p>文獻閱讀</p><strong id="paper-count">0</strong><small>值得反覆閱讀的知識</small></article><article class="stat"><div class="stat-top"><span class="stat-icon purple">✧</span><span>↗</span></div><p>靈感收集</p><strong id="idea-count">0</strong><small>讓好點子不再溜走</small></article><article class="stat"><div class="stat-top"><span class="stat-icon yellow">☑</span><span>↗</span></div><p>待辦事項</p><strong id="task-count">0</strong><small>一步一步，慢慢完成</small></article></div></section>
-        <section class="notes-section" id="notes"><div class="section-heading notes-heading"><div><p class="kicker">每天一點點進步</p><h2>我的知識庫 <span>／ 知識收藏</span></h2><p class="section-description">把想法記下來，讓知識慢慢連結。</p></div><button class="outline" id="new-note-secondary">＋ 新增筆記</button></div><div class="toolbar"><div class="filters" aria-label="筆記分類"><button class="filter active" data-filter="全部">全部 <span id="filter-count">0</span></button><button class="filter" data-filter="研究筆記">研究筆記</button><button class="filter" data-filter="文獻閱讀">文獻閱讀</button><button class="filter" data-filter="靈感收集">靈感收集</button><button class="filter" data-filter="待辦事項">待辦事項</button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜尋你的筆記..." aria-label="搜尋筆記"></label></div><div class="notes-grid" id="notes-grid"></div></section>
+        <section class="notes-section" id="notes"><div class="section-heading notes-heading"><div><p class="kicker">每天一點點進步</p><h2>我的知識庫 <span>／ 知識收藏</span></h2><p class="section-description" id="library-description">把想法記下來，讓知識慢慢連結。</p></div><div class="account-actions"><button class="primary" id="new-meeting" type="button">＋ 記錄會議</button><button class="outline" id="new-note-secondary">＋ 新增紀錄</button></div></div><div class="toolbar"><div class="filters" aria-label="筆記分類"><button class="filter active" data-filter="全部">全部 <span id="filter-count">0</span></button><button class="filter" data-filter="會議紀錄">會議紀錄</button><button class="filter" data-filter="研究筆記">研究筆記</button><button class="filter" data-filter="文獻閱讀">文獻閱讀</button><button class="filter" data-filter="靈感收集">靈感收集</button><button class="filter" data-filter="待辦事項">待辦事項</button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜尋你的紀錄..." aria-label="搜尋紀錄"></label></div><div class="notes-grid" id="notes-grid"></div></section>
         <section class="professor-section" id="professor" aria-labelledby="professor-title">
           <div class="section-heading"><div><p class="kicker">認識你的指導教授</p><h2 id="professor-title">林晉禾教授 <span>／ 學術人物誌</span></h2></div></div>
           <div class="professor-card">
@@ -42,6 +77,29 @@
       </div>
     </main>
   </div>
-  <dialog id="note-dialog"><form id="note-form"><div class="dialog-heading"><div><p class="kicker">為你的想法留個位置</p><h2 id="dialog-title">新增筆記</h2></div><button type="button" class="close" id="close-dialog" aria-label="關閉">×</button></div><label>標題<input id="note-title" maxlength="80" required placeholder="這則筆記想記錄什麼？"></label><label>分類<select id="note-category"><option>研究筆記</option><option>文獻閱讀</option><option>靈感收集</option><option>待辦事項</option></select></label><label>內容<textarea id="note-content" rows="6" required placeholder="把想法寫下來，不必急著完美。"></textarea></label><div class="dialog-actions"><button type="button" class="delete" id="delete-note">刪除筆記</button><button type="button" class="outline" id="cancel-dialog">取消</button><button class="primary" type="submit">儲存筆記</button></div></form></dialog>
+  <dialog id="note-dialog">
+    <form id="note-form">
+      <div class="dialog-heading"><div><p class="kicker">讓每次討論都成為下一步</p><h2 id="dialog-title">新增紀錄</h2></div><button type="button" class="close" id="close-dialog" aria-label="關閉">×</button></div>
+      <label>分類<select id="note-category"><option>研究筆記</option><option>會議紀錄</option><option>文獻閱讀</option><option>靈感收集</option><option>待辦事項</option></select></label>
+      <label>標題<input id="note-title" maxlength="80" required placeholder="這次想記錄什麼？"></label>
+      <label id="note-date-label">記錄日期<input id="note-date" type="date" required></label>
+      <label>內容／討論摘要<textarea id="note-content" rows="5" required maxlength="10000" placeholder="寫下重點、想法或要完成的工作。"></textarea></label>
+      <div id="meeting-fields" hidden>
+        <label>與會人員<input id="meeting-people" maxlength="300" placeholder="例如：指導教授、研究夥伴"></label>
+        <label>教授建議與會議結論<textarea id="meeting-conclusion" rows="4" maxlength="10000" placeholder="記下收到的回饋與確定的方向。"></textarea></label>
+        <label>下次會議日期<input id="meeting-next" type="date"></label>
+      </div>
+      <div id="paper-fields" hidden>
+        <label>作者<input id="paper-author" maxlength="300" placeholder="選填，多位作者可用頓號分隔"></label>
+        <div class="idea-fields"><label>出版年份<input id="paper-year" type="number" min="1000" max="9999" placeholder="選填"></label><label>文獻連結<input id="paper-url" type="url" maxlength="2000" placeholder="請填完整的網頁連結"></label></div>
+      </div>
+      <div id="task-fields" hidden>
+        <div class="idea-fields"><label>截止日期<input id="task-due" type="date"></label><label>完成狀態<select id="task-state"><option>未開始</option><option>進行中</option><option>已完成</option></select></label></div>
+        <label>關聯的會議<select id="task-meeting"><option value="">不指定會議</option></select></label>
+      </div>
+      <p id="note-status" class="form-status" role="status" aria-live="polite"></p>
+      <div class="dialog-actions"><button type="button" class="outline" id="meeting-task" hidden>從此會議新增待辦</button><button type="button" class="outline" id="cancel-dialog">取消</button><button class="primary" type="submit">儲存紀錄</button></div>
+    </form>
+  </dialog>
 </body>
 </html>

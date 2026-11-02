@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f4">
+  <title>知序｜我的第二大腦</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">知</span><span>知序 <small>我的第二大腦</small></span></a>
+      <div class="workspace"><span class="workspace-icon">✳</span><span>研究生的工作空間<small>一點一滴，累積你的知識</small></span><span class="chevron">⌄</span></div>
+      <p class="nav-label">工作空間</p>
+      <nav aria-label="主要導覽">
+        <button class="nav-item active" data-filter="全部"><span>▦</span> 總覽 <span class="nav-end">⌘ 1</span></button>
+        <button class="nav-item" data-filter="研究筆記"><span>▤</span> 研究筆記</button>
+        <button class="nav-item" data-filter="文獻閱讀"><span>▧</span> 文獻閱讀</button>
+        <button class="nav-item" data-filter="靈感收集"><span>✧</span> 靈感收集</button>
+        <button class="nav-item" data-filter="待辦事項"><span>☑</span> 待辦事項</button>
+        <a class="nav-item professor-link" href="#professor"><span>♧</span> 指導教授</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="side-quote">「知識不是收藏，<br>而是讓想法持續生長。」<span>給正在探索的你 ↗</span></div><div class="profile"><div class="avatar">研</div><div>我的研究空間<small>持續探索中 ✨</small></div><span class="chevron">···</span></div></div>
+    </aside>
+    <main id="home" class="main">
+      <header class="topbar"><div class="breadcrumbs">我的工作空間 <span>/</span> <strong id="breadcrumb">總覽</strong></div><div class="top-actions"><span class="saved"><i></i> 自動儲存於此瀏覽器</span><button class="icon-button" id="focus-search" aria-label="搜尋筆記">⌕</button><button class="profile-small" aria-label="個人工作空間">研</button></div></header>
+      <div class="content">
+        <section class="welcome"><div><p class="eyebrow"><span>✳</span> 專屬你的思考空間</p><h1>讓想法，有個安放的地方<span>。</span></h1><p>嗨，研究生！把散落的靈感、文獻與思考，慢慢整理成你的知識宇宙。</p><div class="welcome-actions"><button class="primary" id="new-note">＋ 新增一則筆記</button><a class="text-link" href="#notes">看看我的知識庫 <span>↗</span></a></div></div><div class="illustration" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="planet">✳</div><span class="star star-one">✦</span><span class="star star-two">✳</span><span class="star star-three">✦</span><span class="orbit-label">讓想法在這裡生長</span></div></section>
+        <section class="overview" aria-label="知識庫統計"><div class="section-heading"><div><p class="kicker">你的研究日常</p><h2>研究空間 <span>／ 空間總覽</span></h2></div><span class="subtle">每一個小步驟，都是累積</span></div><div class="stats"><article class="stat"><div class="stat-top"><span class="stat-icon green">▤</span><span>↗</span></div><p>筆記總數</p><strong id="total-count">0</strong><small>所有的思考與紀錄</small></article><article class="stat"><div class="stat-top"><span class="stat-icon peach">▧</span><span>↗</span></div><p>文獻閱讀</p><strong id="paper-count">0</strong><small>值得反覆閱讀的知識</small></article><article class="stat"><div class="stat-top"><span class="stat-icon purple">✧</span><span>↗</span></div><p>靈感收集</p><strong id="idea-count">0</strong><small>讓好點子不再溜走</small></article><article class="stat"><div class="stat-top"><span class="stat-icon yellow">☑</span><span>↗</span></div><p>待辦事項</p><strong id="task-count">0</strong><small>一步一步，慢慢完成</small></article></div></section>
+        <section class="notes-section" id="notes"><div class="section-heading notes-heading"><div><p class="kicker">每天一點點進步</p><h2>我的知識庫 <span>／ 知識收藏</span></h2><p class="section-description">把想法記下來，讓知識慢慢連結。</p></div><button class="outline" id="new-note-secondary">＋ 新增筆記</button></div><div class="toolbar"><div class="filters" aria-label="筆記分類"><button class="filter active" data-filter="全部">全部 <span id="filter-count">0</span></button><button class="filter" data-filter="研究筆記">研究筆記</button><button class="filter" data-filter="文獻閱讀">文獻閱讀</button><button class="filter" data-filter="靈感收集">靈感收集</button><button class="filter" data-filter="待辦事項">待辦事項</button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜尋你的筆記..." aria-label="搜尋筆記"></label></div><div class="notes-grid" id="notes-grid"></div></section>
+        <section class="professor-section" id="professor" aria-labelledby="professor-title">
+          <div class="section-heading"><div><p class="kicker">認識你的指導教授</p><h2 id="professor-title">林晉禾教授 <span>／ 學術人物誌</span></h2></div></div>
+          <div class="professor-card">
+            <div class="professor-intro"><img class="professor-avatar" src="林晉禾教授.jpg" alt="林晉禾教授的照片"><div><p class="professor-role">國立中山大學企業管理學系副教授</p><h3>林晉禾</h3><p>研究領域涵蓋國際貿易、國際金融、公司治理、企業永續與國際企業管理。</p></div></div>
+            <div class="professor-columns"><div><h4>求學與任教歷程</h4><ul class="professor-list"><li><strong>２００７年</strong>　中國文化大學國際貿易學士</li><li><strong>２０１１年</strong>　國立中興大學應用經濟學碩士</li><li><strong>２０１８年</strong>　取得日本慶應義塾大學經濟學博士，並於同年開始在逢甲大學經濟系任教</li><li><strong>２０２３年</strong>　任職中山大學企管系助理教授</li><li><strong>２０２４年起</strong>　任中山大學企管系副教授</li></ul><p class="professor-story">依中山大學管理學院專訪，林教授大學時便立志成為大學教師；服兵役期間持續準備研究所，之後前往日本攻讀博士，也曾運用遊戲教學幫助學生理解經濟學。</p></div><div><h4>精選期刊論文</h4><p class="professor-caption">以下為論文題意的中文整理，完整書目與作者請見來源。</p><ul class="publication-list"><li><span>２０２５</span><div>台灣鞋類出口的存續期間與影響因素<small>探討出口關係的延續。</small></div></li><li><span>２０２５</span><div>電子網絡對電子廢棄物貿易的影響<small>以東協加六國家為研究對象。</small></div></li><li><span>２０２５</span><div>巴塞爾公約對廢電機電子設備貿易的經濟影響<small>探討國際環境規範與廢棄物貿易。</small></div></li><li><span>２０２４</span><div>俄烏戰爭背景下碳邊境調整機制對貿易的影響<small>關注碳政策與國際貿易。</small></div></li><li><span>２０２３</span><div>中國國家劍政策對廢棄物進口的影響<small>運用差異中的差異方法進行分析。</small></div></li></ul></div></div>
+            <div class="professor-sources"><span>資料來源與完整著作</span><a href="https://db.cm.nsysu.edu.tw/pages/%E6%9E%97%E6%99%89%E7%A6%BE_1401.html" target="_blank" rel="noopener noreferrer">中山大學教師資料 ↗</a><a href="https://www.cm.nsysu.edu.tw/p/404-1024-308384.php?Lang=zh-tw" target="_blank" rel="noopener noreferrer">管理學院專訪 ↗</a><a href="https://sites.google.com/site/chinholinpage/home" target="_blank" rel="noopener noreferrer">教授個人網頁與著作 ↗</a><small>資料查閱日期：２０２６年１１月２日</small></div>
+          </div>
+        </section>
+        <footer><span>✳ 知序 <span class="footer-divider">／</span> 讓知識，成為自己的風景。</span><span>為每一個認真思考的你而設計 ♡</span></footer>
+      </div>
+    </main>
+  </div>
+  <dialog id="note-dialog"><form id="note-form"><div class="dialog-heading"><div><p class="kicker">為你的想法留個位置</p><h2 id="dialog-title">新增筆記</h2></div><button type="button" class="close" id="close-dialog" aria-label="關閉">×</button></div><label>標題<input id="note-title" maxlength="80" required placeholder="這則筆記想記錄什麼？"></label><label>分類<select id="note-category"><option>研究筆記</option><option>文獻閱讀</option><option>靈感收集</option><option>待辦事項</option></select></label><label>內容<textarea id="note-content" rows="6" required placeholder="把想法寫下來，不必急著完美。"></textarea></label><div class="dialog-actions"><button type="button" class="delete" id="delete-note">刪除筆記</button><button type="button" class="outline" id="cancel-dialog">取消</button><button class="primary" type="submit">儲存筆記</button></div></form></dialog>
+</body>
+</html>
